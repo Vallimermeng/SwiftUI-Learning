@@ -7,7 +7,7 @@ struct ContentView: View {
     @State private var tipPercentage = 20
     @FocusState private var amountIsFocused: Bool
     @State private var isShowAnotherPercentage = false
-    
+    @State private var isZeroPercentage = false
     var typesAmount: [String] = ["Общая сумма", "Итого на человека"]
     @State private var selectedAmount = "Общая сумма"
     
@@ -34,6 +34,8 @@ struct ContentView: View {
         return total
     }
     
+    
+    
     var body: some View {
         NavigationStack{
             
@@ -56,8 +58,12 @@ struct ContentView: View {
                         ForEach(tipPercentages, id: \.self){
                             Text($0, format: .percent)
                         }
+                        
                     }
                     .pickerStyle(.segmented)
+                    
+                    
+                    
                     
                     Button("Выбрать определенный процент"){
                         isShowAnotherPercentage.toggle()
@@ -88,12 +94,13 @@ struct ContentView: View {
                     
                 case "Общая сумма":
                     Section("Общая сумма"){
-                        Text(totalAmount, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
+                        Text(totalAmount, format: .currency(code: Locale.current.currency?.identifier ?? "USD")).background(tipPercentage == 0 ? Color.red.opacity(0.75) : Color.clear).cornerRadius(10)
                     }
                 default:
                     EmptyView()
                 }
                 
+               
            
             }
             //navigationStack:
@@ -112,9 +119,6 @@ struct ContentView: View {
     
     
 }
-
-
-
 
 
 
