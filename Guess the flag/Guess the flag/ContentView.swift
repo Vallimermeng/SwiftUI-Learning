@@ -13,6 +13,7 @@ struct ContentView: View {
     
     @State private var attempt = 0
     
+    
     var body: some View {
         ZStack{
             
@@ -23,10 +24,11 @@ struct ContentView: View {
             
             VStack{
                 Spacer()
-                Text("Угадай флаг").font(.largeTitle.weight(.bold)).foregroundStyle(.white)
+                Text("Угадай флаг").fontLarge().foregroundStyle(.white)
                 Spacer()
                 Spacer()
                 Text("Счет: \(score)").foregroundStyle(.white).font(.title.bold())
+                
                 if(averageRate().isNaN){
                     Text("Рейтинг: 0%").foregroundStyle(.white).font(.title.bold())
                 }else{
@@ -38,14 +40,14 @@ struct ContentView: View {
                 VStack(spacing: 15){
                     VStack{
                         Text("Нажмите на флаг").foregroundStyle(.secondary).font(.subheadline.weight(.heavy))
-                        Text(countries[correctAnswer]).font(.largeTitle.weight(.semibold))
+                        Text(countries[correctAnswer]).fontLarge()
                     }
                     
                     ForEach(0..<3){number in
                         Button{
                             flagTapped(number)
                         }label:{
-                            Image(countries[number]).clipShape(.capsule).shadow(radius: 5)
+                            FlagImage(name: countries[number])
                         }
                     }
                 }
@@ -94,6 +96,32 @@ struct ContentView: View {
     }
     
 }
+
+struct FlagImage: View{
+    var name: String
+    
+    var body: some View{
+        Image(name)
+            .clipShape(.capsule)
+            .shadow(radius: 5)
+    }
+}
+
+
+struct LargeTitleHeader: ViewModifier{ // for large names
+    func body(content: Content) -> some View{
+        content
+            .font(.largeTitle.weight(.bold))
+            
+    }
+}
+
+extension View {
+    func fontLarge() -> some View {
+        modifier(LargeTitleHeader())
+    }
+}
+
 
 #Preview {
     ContentView()
