@@ -32,7 +32,7 @@ struct ContentView: View {
                 if(averageRate().isNaN){
                     Text("Рейтинг: 0%").foregroundStyle(.white).font(.title.bold())
                 }else{
-                    Text("Рейтинг: \(averageRate())%        ").foregroundStyle(.white).font(.title.bold())
+                    Text("Рейтинг: \(averageRate().formatted())%        ").foregroundStyle(.white).font(.title.bold()) // formatted()
                 }
                 
                 Spacer()
@@ -64,7 +64,7 @@ struct ContentView: View {
         .alert(scoreTitle, isPresented: $showinScore){ // ?
             Button("Продолжить", action: askQuestion)
         }message: {
-            Text("Ваш счет: \(score). Оценка: \(averageRate()) %")
+            Text("Ваш счет: \(score). Оценка: \(averageRate().formatted()) %")
             
         }
         
