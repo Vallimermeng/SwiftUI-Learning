@@ -1,0 +1,41 @@
+{
+  "activityEntities" : [
+    "dataSourceTrainingStarted",
+    [
+      {
+        "createdDate" : "2026-08-13T08:38:37Z",
+        "event" : "dataSourceTrainingStarted",
+        "id" : "49A6C76F-8768-4F51-8C13-A02B7039FC1C",
+        "subtitle" : "BetterRest 1",
+        "title" : "Used By"
+      }
+    ],
+    "dataSourceMetrics",
+    [
+      {
+        "createdDate" : "2026-08-13T08:38:37Z",
+        "event" : "dataSourceMetrics",
+        "id" : "E631AC74-6CFF-4F06-9CDC-7DCD77A7FA2A",
+        "subtitle" : "10 000 Items",
+        "title" : "Data Summary"
+      }
+    ]
+  ],
+  "createdDate" : "2026-08-13T08:35:50Z",
+  "dataPathRelativeToProjectURL" : "../BetterRest.csv/",
+  "dataResult" : {
+    "createdDate" : "2026-08-13T08:35:50Z",
+    "dataSourceID" : "362B7FE0-D919-4974-B7F5-66F286AB2FF0",
+    "dataURL" : "file:///Users/petya/Desktop/Code/iOS/SwiftUI-Learning/BetterRest/BetterRest.csv"
+  },
+  "dataURL" : "file:///Users/petya/Desktop/Code/iOS/SwiftUI-Learning/BetterRest/BetterRest.csv",
+  "experimentIDs" : [
+    "ED2A456A-8D9F-43A4-93FC-1C2642085480"
+  ],
+  "id" : "362B7FE0-D919-4974-B7F5-66F286AB2FF0",
+  "modifiedDate" : "2026-08-13T08:38:37Z",
+  "pathType" : 0,
+  "preferredFilename" : "BetterRest.csv",
+  "title" : "BetterRest.csv",
+  "version" : "1.0"
+}

@@ -1,9 +1,3 @@
-//
-//  BetterRestApp.swift
-//  BetterRest
-//
-//  Created by Петя on 12.08.2026.
-//
 
 import SwiftUI
 
