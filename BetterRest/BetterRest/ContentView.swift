@@ -33,8 +33,16 @@ struct ContentView: View {
                 
                 VStack(alignment: .leading, spacing: 10){
                     Text("Ежедневное потребление кофе").font(.headline)
-                    Stepper("\(coffeeAmount) чашек", value: $coffeeAmount, in: 0...20)
+                    Picker("Количество кофе", selection: $coffeeAmount){
+                        ForEach(1...10, id: \.self){number in
+                            Text("\(number)")
+                        }
+                    }
                 }
+                
+//                Section("Вывод"){
+//                    Text("\(calculatedBedTime)")
+//                }
             }
             // vstack
             .navigationTitle("BetterRest")
